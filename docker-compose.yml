@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  server:
+    build: server
+    networks:
+      - test-websockets
+
+  client:
+    build: client
+    networks:
+      - test-websockets
+    depends_on:
+      - server
+
+networks:
+  test-websockets:        
+
